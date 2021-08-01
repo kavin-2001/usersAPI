@@ -52,6 +52,12 @@ Response:
 
 # UI Project:
 
+I have created the UI project based on HTML and JQuery. Initially the loginPage.html will be displayed. This is a dummy page. Upon clicking on Login, it will redirect to index.html where the main content is displayed.
+
+Login Page:
+![image](https://user-images.githubusercontent.com/79739295/127759640-d211df5a-b3e4-447e-bc14-ba8444798a0d.png)
+
+
 On clicking of Load all users, there will be a Rest call from jquery which fetches the data and populated the option list as below in the screenshot.
 
 ![image](https://user-images.githubusercontent.com/79739295/127759542-5ce99385-7f87-4714-b9a4-f7683792e439.png)
