@@ -11,6 +11,7 @@ Sample Queries and responses:
 1. Get All users
 
 Request: http://localhost:8080/getuserslist
+
 Response: 
 [
   {
@@ -40,3 +41,11 @@ Response:
     }
   }
 ]
+
+2.Get More details of a particular user:
+
+Request: http://localhost:8080/getMoreDetails?userName=Kavin
+
+Response:
+
+{"address_line1":"3","address_line2":"Thathipalayam","address_line3":"Konur Post","phone":"5645432187"}
