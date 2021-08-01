@@ -50,7 +50,7 @@ Response:
 
 {"address_line1":"3","address_line2":"Thathipalayam","address_line3":"Konur Post","phone":"5645432187"}
 
-UI Project:
+# UI Project:
 
 On clicking of Load all users, there will be a Rest call from jquery which fetches the data and populated the option list as below in the screenshot.
 
