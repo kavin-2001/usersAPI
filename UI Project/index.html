@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#showAllBtn").click(function(){
+     $.ajax({
+
+             type: "GET",
+
+             url: "http://localhost:8080/getuserslist",
+
+             contentType: "application/json; charset=utf-8",
+
+             dataType: "json",
+
+             success: function (response) {
+
+				console.log(response);
+				if(document.getElementById("userslist")){
+				document.getElementById("userslist").options.length = 0;
+				}
+				$('#usersList').append('<option value="empty">' + "Select User below" + '</option>');
+				for(var i in response){
+					console.log(response[i].name);
+					$('#usersList').append('<option value="' + response[i].firstName + '">' + response[i].name + '</option>');
+				}
+
+             },
+
+             failure: function (response) {
+
+                 alert(response.d);
+
+             }
+
+         });
+
+     });
+	 
+	 $("#usersList").change(function() {
+	console.log('Change Detected!');
+	var selected = $('#usersList').val();
+	console.log(selected);
+	$.ajax({
+
+             type: "GET",
+
+             url: "http://localhost:8080/getMoreDetails?userName="+selected+"",
+
+             contentType: "application/json; charset=utf-8",
+
+             dataType: "json",
+
+             success: function (response) {
+
+				console.log(response);
+				
+				$("#address1").html("Address: "+ response.address_line1);
+				$("#address2").html(response.address_line2);
+				$("#address3").html(response.address_line3);
+				$("#phone").html(response.phone);
+				//alert(response);
+				console.log('success end');
+             },
+
+             failure: function (response) {
+
+                 alert(response.d);
+
+             }
+});
+});
+});
+
+
+</script>
+</head>
+<body>
+
+<center><h2>User Details</h2> </center>
+
+
+<div id="showuserslistDiv">
+<button id="showAllBtn"> Show All Users</button>
+  <center> <table id="resultTable">
+<tr>
+<td id="address1"></td>
+<td id="address2"></td>
+<td id="address3"></td>
+<td id="phone"></td>
+</tr>
+</table></center>
+</div>
+<center><div id="showusersui">
+   <select id="usersList" name="users">
+
+
+
+</div>
+</center>
+
+
+</body>
+</html>
