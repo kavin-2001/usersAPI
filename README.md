@@ -57,3 +57,8 @@ On clicking of Load all users, there will be a Rest call from jquery which fetch
 ![image](https://user-images.githubusercontent.com/79739295/127759542-5ce99385-7f87-4714-b9a4-f7683792e439.png)
 
 ![image](https://user-images.githubusercontent.com/79739295/127759569-8abbe657-e8a0-46c6-8dda-923aa7c6d0c5.png)
+
+On selection of a user, it will again make a GET call to fetch the more details for the user.
+
+![image](https://user-images.githubusercontent.com/79739295/127759583-53890fcc-6e60-4805-a452-98a2ef4c18ae.png)
+
